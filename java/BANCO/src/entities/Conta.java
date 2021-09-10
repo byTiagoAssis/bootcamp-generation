@@ -46,7 +46,9 @@ public abstract class Conta {
 
 	@Override
 	public String toString() {
-		return "Conta [numero=" + numero + ", cpf=" + cpf + "]";
+		return ("Número da Conta: "+ this.numero +
+				"CPF: "+ this.cpf +
+				"SALDO: "+ this.saldo); 
 	}
 	
 	//metodos
@@ -67,5 +69,6 @@ public abstract class Conta {
 		else {
 			saldo -= valor;
 		}
+		
 	}
 }

@@ -17,7 +17,7 @@ public class Cavalo extends Animal implements Treinamento{
 
 	@Override
 	public void rolarChao() {
-		// TODO Auto-generated method stub
+		System.out.println("Cavalo rolando....");
 		
 	}
 
