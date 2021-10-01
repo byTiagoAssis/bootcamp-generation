@@ -1,5 +1,4 @@
-package com.lojadegames.box4.controller;
-
+package com.farma.gen.controller;
 
 import java.util.List;
 
@@ -16,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lojadegames.box4.model.Produto;
-import com.lojadegames.box4.repository.ProdutoRepository;
+import com.farma.gen.model.Produto;
+import com.farma.gen.repository.ProdutoRepository;
 
 
 @RestController
@@ -61,5 +60,5 @@ public class ProdutoController {
 		repository.deleteById(id);
 	}
 
-	
 }
+

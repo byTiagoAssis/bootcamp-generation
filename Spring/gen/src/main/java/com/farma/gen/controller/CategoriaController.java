@@ -1,5 +1,4 @@
-package com.lojadegames.box4.controller;
-
+package com.farma.gen.controller;
 
 import java.util.List;
 
@@ -16,43 +15,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lojadegames.box4.model.Produto;
-import com.lojadegames.box4.repository.ProdutoRepository;
-
+import com.farma.gen.model.Categoria;
+import com.farma.gen.repository.CategoriaRepository;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/categoria")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class ProdutoController {
+public class CategoriaController {
 
 	@Autowired
-	private ProdutoRepository repository;
+	private CategoriaRepository repository;
 
 	@GetMapping
-	public ResponseEntity<List<Produto>> GetAll() {
+	public ResponseEntity<List<Categoria>> GetAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Produto> GetById(@PathVariable long id) {
+	public ResponseEntity<Categoria> GetById(@PathVariable long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
-	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Produto>> GetByTitulo(@PathVariable String nome) {
-		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
+	@GetMapping("/descricao/{descricao}")
+	public ResponseEntity<List<Categoria>> GetByDescricao(@PathVariable String descricao) {
+		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
 
 	}
 
 	@PostMapping
-	public ResponseEntity<Produto> post(@RequestBody Produto produto) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
+	public ResponseEntity<Categoria> post(@RequestBody Categoria categoria) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(categoria));
 
 	}
 
 	@PutMapping
-	public ResponseEntity<Produto> put(@RequestBody Produto produto) {
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(produto));
+	public ResponseEntity<Categoria> put(@RequestBody Categoria categoria) {
+		return ResponseEntity.status(HttpStatus.OK).body(repository.save(categoria));
 
 	}
 
@@ -60,6 +58,7 @@ public class ProdutoController {
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
 	}
-
-	
 }
+
+
+
