@@ -1,0 +1,80 @@
+/* ESTILOS DA PAGINA INDEX*/
+body {
+    background-color: #c8d6e5;
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+display: flex;
+flex-flow: row;
+justify-content: center;
+align-items: center;
+}
+
+#menu li {
+
+    display: inline;
+    padding: 15px;
+    background-color: #222f3e;
+    
+}
+#menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+#menu li a:hover {
+    
+   color: gray;
+}
+
+.p-30 {
+    padding: 30px;
+}
+.if1 {
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    padding: 30px;
+}
+
+.rodape {
+    text-align: center;
+    background-color: #222f3e;
+    color: white;
+    padding: 57.6px;
+    text-align: center;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ESTILOS DA PAGINA CONTATO*/
+
+
+
+
+
